@@ -1,15 +1,319 @@
-form {
-  background-color: powderblue;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 5px;
+/* Base styles */
+:root {
+  --bg: #f8fafc;
+  --muted: #6b7280;
+  --indigo: #4f46e5;
+  --emerald: #059669;
+  --yellow: #d97706;
+  --card: #ffffff;
 }
 
-p {
-  background-color: rgb(0, 169, 121);
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 5px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+* {
+  box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
+}
+
+/* Container */
+main {
+  max-width: 60rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+}
+
+/* Cards */
+.card {
+  background-color: #d1d1d1;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  margin-bottom: 1rem;
+}
+
+/* Header / Hero */
+.hero {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  outline-style: groove;
+  outline-color: #4f46e5;
+  outline-width: 2px;
+}
+
+.hero-left {
+  flex: 1 1 48rem;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.tagline {
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 10px solid rgba(237, 9, 9, 0.06);
+}
+
+.btn.primary {
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+}
+
+/* Stat tiles */
+.tiles {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.tile {
+  border-radius: 0.75rem;
+  padding: 0.9rem;
+  text-align: center;
+}
+
+.tile-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.tile-value {
+  font-weight: 700;
+  margin-top: 0.4rem;
+}
+
+.tile.count {
+  background: rgba(79, 70, 229, 0.06);
+  color: var(--indigo);
+  outline-style: solid;
+}
+
+.tile.loc {
+  background: rgba(5, 150, 105, 0.06);
+  color: var(--emerald);
+  outline-style: solid;
+}
+
+.tile.dress {
+  background: rgba(217, 119, 6, 0.06);
+  color: var(--yellow);
+  outline-style: solid;
+}
+
+/* Event details */
+.meta-list {
+  margin-top: 0.75rem;
+  padding-left: 1.25rem;
+}
+
+.meta-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* RSVP form */
+.rsvp-form {
+  margin-top: 2rem;
+  border: #4f46e5 1px groove;
+  
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 3.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-text {
+  color: var(--muted);
+}
+
+/* Grid Section */
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.grid-item {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  padding: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .grid-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Venue Section */
+.venue-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.venue-image {
+  width: 100%;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  max-height: 300px;
+  float: left;
+}
+
+.venue-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .venue-container {
+    flex-direction: row;
+  }
+
+  .venue-image {
+    width: 50%;
+    max-height: none;
+  }
+
+  .venue-details {
+    width: 50%;
+    padding-left: 1.5rem;
+  }
+}
+
+/* Responsive adjustments */
+@media (min-width: 640px) {
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .tiles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Internal navigation bar */
+.event-nav {
+  background: var(--card);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  margin-bottom: 1rem;
+  
+}
+
+.event-nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.event-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--indigo);
+}
+
+.event-nav a:hover {
+  text-decoration: underline ;
+}
+
+/* .test {
+  overflow: auto;
+  overflow: scroll;
+}
+
+div:hover {
+  background-color: rgb(161, 161, 161);
+}
+
+.hover {
+  display: none;
+  background-color: rgb(163, 163, 152);
+  padding: 20px;
+}
+
+div:hover p {
+  display: block;
+} */
+
+/* .venue-image { */
+  /* width: 100px;
+  height: 100px; */
+  /* background-color: red; */
+  /* position: relative;
+  animation-name: example;
+  animation-duration: 4s; */
+  /* animation-iteration-count: infinite; */
+/* }
+
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+ 
+} */
