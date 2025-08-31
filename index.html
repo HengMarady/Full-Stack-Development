@@ -1,57 +1,151 @@
-<!DOCTYPE html>
-<html>
-    <link rel="stylesheet" href="style.css">
-    <head>
-        <title>Registration</title>
-    </head>
-      
-    <h1 style="color: rgb(255, 255, 255); text-align: center; background-color: rgb(0, 155, 245);">Welcome to Registration centre</h1>
-    <body>
-<form>
-    <h2>Fill In Your Information:</h2>
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname"><br>
-  <label for="email">Email:</label><br>
-  <input type="text" id="email" name="email" placeholder="abc@gmail.com"><br>
-  <label for="bday"> Birthday :</label><br>
-    <input type="date" id="bday"><br>
-    <label for="title"> Title :</label>
-        <label for="Mr.">Mr.</label>
-        <input type="radio" id="title" value="Mr." name="title">
-        <label for="Ms.">Ms.</label>
-        <input type="radio" id="title" value="Ms." name="title">
-        <br><br>
-            <input type="submit" style="width: 56.1em; background-color: rgb(170, 255, 0);">
-        <br><br>
-        <input type="reset" style="width: 56.1em; background-color: rgb(170, 255, 0);">
-        <br><br>
-</form>
-<p>
-    Sample Information Table 
-</p>
-<style>
-table, th, td {
-  border:2px solid black;
-}
-</style>
-<table style="width:100%">
-  <tr style="background-color: rgb(117, 117, 255);">
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Email</th>
-    <th>Date Of Birth</th>
-  </tr>
-  <tr style="text-align: center;">
-    <td>Heng</td>
-    <td>Marady</td>
-    <td>heng.marady25@kit.edu.kh</td>
-    <td>21/08/2006</td>
-  </tr>
-</table>
-<br><br>
-<a href="" target="_blank"><img src="Bald-eagle.webp" style="width: 300px; height: 200px;" ></a>
-    </body>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>You're Invited — Special Event</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+
+    <!-- Internal Navigation -->
+    <nav class="event-nav">
+      <ul>
+        <li><a href="#details-heading">Event Details</a></li>
+        <li><a href="#speaker-section">Speaker</a></li>
+        <li><a href="#venue-section">Venue</a></li>
+        <li><a href="#rsvp-section">RSVP</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header / Hero -->
+    <header class="card hero">
+      <div class="hero-left">
+        <h1 id="event-title" class="title">Tech Innovators Conference</h1>
+        <p id="event-tagline" class="tagline">Where tech pioneers connect to shape the future.</p>
+      </div>
+
+      <div class="tiles">
+        <div class="tile count card">
+          <div class="tile-label">Event Date & Time</div>
+          <div id="countdown" class="tile-value">Dec 24, 2025 09:00 AM</div>
+        </div>
+        <div class="tile loc card">
+          <div class="tile-label">Location</div>
+          <div id="event-location" class="tile-value">Phnom Penh, Sokha Hotel</div>
+        </div>
+        <div class="tile dress card">
+          <div class="tile-label">Dress Code</div>
+          <div id="dress-code" class="tile-value">Casual</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Speaker Section -->
+    <section id="speaker-section" class="card" aria-labelledby="speaker-heading">
+      <h2 id="speaker-heading">Speaker</h2>
+      <h3>Khoun Visal</h3>
+      <p>AI Researcher</p>
+    </section>
+
+    <!-- Event details -->
+    <section class="card" aria-labelledby="details-heading">
+      <h2 id="details-heading">Event Details</h2>
+      <p class="muted">
+        Join the Tech Innovators Conference for a day of cutting-edge talks, hands-on workshops, and game-changing
+        networking with industry leaders.
+      </p>
+      <div class="test">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente eligendi architecto, soluta nam, sequi eveniet deserunt, quo ad nesciunt obcaecati corporis dolorem fuga saepe quod error id non. Deleniti, odio.</div>
+
+      <ul class="meta-list">
+        <li><strong>9:00 AM:</strong> Opening Remarks</li>
+        <li><strong>10:30 AM:</strong> Breakout Sessions</li>
+        <li><strong>01:00 PM:</strong> Lunch & Networking</li>
+        <li><strong>02:30 PM:</strong> Open Discussion</li>
+        <li><strong>05:00 PM:</strong> Closing Remarks</li>
+      </ul>
+    </section>
+
+      <!-- Grid Section -->
+      <section class="card">
+        <h2>Conference Highlights</h2>
+        <div class="grid-section">
+          <div class="grid-item">
+            <h3>Networking</h3>
+            <p>Connect with industry leaders and peers.</p>
+          </div>
+          <div class="grid-item">
+            <h3>Workshops</h3>
+            <p>Participate in hands-on sessions led by experts.</p>
+          </div>
+          <div class="grid-item">
+            <h3>Keynotes</h3>
+            <p>Hear from top innovators in technology.</p>
+          </div>
+        </div>
+      </section>
+
+    <!-- Venue Section -->
+    <section id="venue-section" class="card" aria-labelledby="venue-heading">
+      <h2 id="venue-heading">Venue</h2>
+      <div class="venue-container">
+        <img src="/photo/sokha.jpg" alt="Sokha Hotel Phnom Penh exterior view" class="venue-image">
+        <div class="venue-details">
+          <h3>Sokha Hotel Phnom Penh</h3>
+          <p>Street Keo Chenda, Phum 1, Sangkat Chroy Changvar, Khan Chroy Changvar, Phnom Penh, Cambodia</p>
+          <p class="muted">A luxurious 5-star hotel located along the Mekong River, offering state-of-the-art conference
+            facilities and breathtaking views.</p>
+      </div>
+    </section>
+
+    <!-- RSVP form -->
+    <section id="rsvp-section" class="card rsvp-form">
+      <h3>RSVP</h3>
+      <p class="muted">Please let us know if you'll attend. Responses will be sent by email</p>
+
+      <form action="/submit-form" method="post" enctype="text/plain">
+        <div class="form-row">
+          <label for="name">Full name</label>
+          <input id="name" name="Name" required />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" required />
+        </div>
+
+        <div class="form-row">
+          <label for="attending">Attendance</label>
+          <select id="attending" name="Attendance">
+            <option value="Yes">Yes, I will attend</option>
+            <option value="No">No, I cannot make it</option>
+            <option value="Maybe">Maybe</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="guests">Number of guests</label>
+          <input id="guests" name="Guests" type="number" min="0" value="0" />
+        </div>
+
+        <div class="form-row">
+          <label for="notes">Dietary needs / Notes</label>
+          <textarea id="notes" name="Notes" rows="3"></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" type="submit">Send RSVP</button>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <div class="footer-text">© 2025 Tech Innovators Conference. All rights reserved.</div>
+    </footer>
+  </main>
+</body>
 
 </html>
